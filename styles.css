@@ -8,8 +8,16 @@ header {
     background-position: center;
     background-repeat: no-repeat;
 }
-p, h1 {
+h1 {
   text-align: center;
+}
+p {
+  text-align: center;
+  margin: 0 auto;
+  padding: 5px;
+  height: 10px;
+  width: 100%;
+  vertical-align: middle;
 }
 #gameBoard {
     position:fixed;
@@ -26,7 +34,7 @@ p, h1 {
 
 .pegContainer {
   display: inline-block;
-  height: 50%;
+  min-height: 50%;
   width: 25%;
   background-color: #ccc;
   margin: 175px 0px 0px 5px;
@@ -35,4 +43,16 @@ p, h1 {
   text-align: center;
   cursor: move;
   border-radius: 30px;
+}
+.label {
+  height: 30px;
+  width: 100%;
+  background-color: white;
+  float: left;
+  vertical-align: bottom;
+  clear:left;
+  border-radius: 30px;
+  background-color: orange;
+  border: solid #000;
+  border-width: 3px;
 }

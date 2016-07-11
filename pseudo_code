@@ -27,4 +27,14 @@
               - Uses discs.css('top',....) and append/prepend to order
                 the discs on top of each other in the divs
             ________________________________________________
-      -adjust height of #pegContainer to expand and fit sum of disc height
+      -adjust height of #pegContainer to expand and fit sum of all discs height (min-height?)
+
+
+
+      GOALS:
+
+      MONDAY JULY 11:
+                      -Get three divs in the peg containers.
+                      -Achieve full drag/drop ability for all discDivs
+                      -Solve the 'Order of Discs' function/ability
+                      -Add background URL to each pegContainer using PS to make pegs and labels
