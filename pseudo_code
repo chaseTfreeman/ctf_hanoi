@@ -1,0 +1,30 @@
+ - Header/Title to be centered on page.
+ - Game board (container Div) to be centered beneath the header
+ - The Game board will contain three divs #pegContainer (labeled A/B/C) which will
+    EACH contain another div nearly equal in size (#pegA, #pegB, #pegC)
+ - #pegs A, B, & C will all be 'ui-droppable' and have
+    the id #pegA,B,C. (all styled the same).
+ - The height of #pegContainers & #pegA/B/C will be calculated based on
+  the height of however many discs there are (determined by the heigh of
+   Discs which is constant)
+ - Ideally, the user will be able to choose the number of discs they would
+   like to use and this will cause the change in div heights to accomodate
+   the 'draggable/droppable' properties of the divs
+
+ Functionality:
+ - Drag and drop from one #peg to the another:
+  FEATURES:
+      - ***Toggle the ability to select discs only if they are on the top.
+            ________________________________________________
+              Enable top disc on first peg.
+
+              EXAMPLE CODE: lines 224-244
+            ________________________________________________
+      -.on("Mouseover"), highlight/focus on the the chosen disc.
+      -***figure out drag/drop and if .append is needed.
+            ________________________________________________
+            EXAMPLE CODE: Lines 252-264;
+              - Uses discs.css('top',....) and append/prepend to order
+                the discs on top of each other in the divs
+            ________________________________________________
+      -adjust height of #pegContainer to expand and fit sum of disc height

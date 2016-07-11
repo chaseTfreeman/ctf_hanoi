@@ -1,0 +1,13 @@
+
+header {
+  width: 50%;
+    height: 100px;
+    margin: 0 auto;
+    background-image: url(burmese_towers.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+p, h1 {
+  text-align: center;
+}
