@@ -34,7 +34,7 @@
       GOALS:
 
       MONDAY JULY 11:
-                      -Get three divs in the peg containers.
-                      -Achieve full drag/drop ability for all discDivs
-                      -Solve the 'Order of Discs' function/ability
-                      -Add background URL to each pegContainer using PS to make pegs and labels
+        [DONE]      -Get three divs in the peg containers.
+                    -Achieve full drag/drop ability for all discDivs
+        [Done]      -Solve the 'Order of Discs' function/ability
+                    -Add background URL to each pegContainer using PS to make pegs and labels
