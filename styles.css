@@ -9,7 +9,7 @@ header {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
 }
 h1 {
   text-align: center;
@@ -22,7 +22,11 @@ p {
   width: 100%;
   vertical-align: middle;
 }
-
+.wrapper{
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
 
 .discContainer {
 
@@ -31,22 +35,39 @@ p {
   width: 25%;
   background-color: #ccc;
   border: none;
-  border-radius: 30px;
+  -webkit-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 2px 2px black;
+  -ms-box-shadow: 3px 2px 2px black;
+  box-shadow: 3px 2px 2px black;
   vertical-align: middle;
+  position: relative;
 
 }
 .disc {
   height: 10%;
-  border-radius: 30px;
   background-color: orange;
   border: solid #000;
   border-width: 3px;
+  -webkit-border-radius: inherit;
+  -ms-border-radius: inherit;
+  -moz-border-radius: inherit;
+  border-radius: inherit;
+  -webkit-box-shadow: inherit;
+  -ms-box-shadow: inherit;
+  box-shadow: inherit;
   margin: 0 auto;
   cursor: move;
+  top: 50px;
+
+
 }
 #discOne {
   width:30%;
   margin: 0 auto;
+  top: 50px;
 }
 #discTwo {
   width: 63%;
