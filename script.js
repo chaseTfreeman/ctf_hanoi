@@ -32,18 +32,18 @@ $("document").ready(function(){
   function createDisc(num) {
     num = parseInt(num);
     for(i = 1; i != num+1; i++){
-      $("#discContainerA").append("<div class=disc draggable=true" + "id=" + i + ">");
+      $("#discContainerA").prepend("<div class=disc draggable=true" +" " + "id=" + i + ">").css("height", "20px")
+    }
   }
-}
 
-//************END Dynamic Disk Creation******************
-//                      *********Rules*************
-//If discContainer's first child element has LOWER 'rank' than 'ui.draggable'
+  //************END Dynamic Disk Creation******************
+  //                      *********Rules*************
+  //If discContainer's first child element has LOWER 'rank' than 'ui.draggable'
 
-var discID = $(".disc").attr("id")
+  var discID = $(".disc").attr("id")
 
 
-// then revert/cancel the drag/drop.
+  // then revert/cancel the drag/drop.
 
-//**********End addClass code*********************
+  //**********End addClass code*********************
 });

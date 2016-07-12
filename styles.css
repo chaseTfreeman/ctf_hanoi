@@ -49,7 +49,7 @@ p {
 
 .disc {
   height: 10%;
-  width: 95%;
+  width: 30%;
   background-color: orange;
   border: solid #000;
   border-width: 3px;
@@ -65,7 +65,7 @@ p {
 
 }
 
-.dropped {
+/*.dropped {
   height: 10%;
   background-color: purple;
   border: solid #000;
@@ -84,6 +84,7 @@ p {
   left: 0px;
   right: 0px;
 }
+*/
 #formHolder {
   min-height: 100;
   width: 400px;
