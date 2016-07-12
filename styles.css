@@ -30,7 +30,7 @@ p {
 .discContainer {
   display: inline-block;
   min-height: 100px;
-  min-width: 25%;
+  width: 250px;
   background-color: #ccc;
   border: 5px solid black;
   -webkit-border-radius: 10px;
@@ -40,7 +40,7 @@ p {
   -webkit-box-shadow: 3px 2px 2px black;
   -ms-box-shadow: 3px 2px 2px black;
   box-shadow: 3px 2px 2px black;
-  vertical-align: middle;
+  vertical-align: middle;*/
   background-image: url(#);
   background-size:cover;
   background-repeat: no-repeat;
@@ -64,21 +64,16 @@ p {
 }
 #discOne {
   width:30%;
-  margin-top: 10px;
-
-
 }
 #discTwo {
   width: 63%;
-  margin: 0 auto;
 }
 
 #discThree {
   width:97%;
-  margin: 0 auto;
 }
 
-.dropped {
+/*.dropped {
   height: 10%;
   background-color: purple;
   border: solid #000;
@@ -92,6 +87,9 @@ p {
   box-shadow: inherit;
   margin: 0 auto;
   cursor: move;
-  bottom:0;
+  bottom:0px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
 
-}
+}*/
