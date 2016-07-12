@@ -32,7 +32,11 @@ $("document").ready(function(){
   function createDisc(num) {
     num = parseInt(num);
     for(i = 1; i != num+1; i++){
-      $("#discContainerA").prepend("<div class=disc draggable=true" +" " + "id=" + i + ">").css("height", "20px")
+      $("#discContainerA").prepend("<div class=disc draggable=true" +" " + "id=" + i + ">").css('height', "30")
+      $('.disc').css('width', function(i) {
+        return 100 + (i * 7) ;
+      });
+
     }
   }
 
