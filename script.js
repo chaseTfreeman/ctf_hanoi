@@ -17,17 +17,33 @@ $("document").ready(function(){
   });
   //***********End Drag & Drop Code**************
   //*********** Start Dynamic Disk Creation************
-  $("#target").submit(function( event ) {
-    var numDiscs = $(".discChoice").val()
-    event.preventDefault();
-     for (i = 0; i < numDiscs; i++) {
-       console.log(numDiscs);
-       }
-     });
-  //************END Dynamic Disk Creation******************
-  //                      *********Rules*************
-  //If discContainer's first child element has LOWER 'rank' than 'ui.draggable'
-  // then revert/cancel the drag/drop.
+  var numDiscs
+  function getDiscNum() {
+    numDiscs = $(".discChoice").val()
+    return numDiscs
+  }
 
-  //**********End addClass code*********************
+  $("#target").submit(function(event){
+    event.preventDefault();
+    getDiscNum()
+    createDisc(getDiscNum())
+  });
+
+  function createDisc(num) {
+    num = parseInt(num);
+    for(i = 1; i != num+1; i++){
+      $("#discContainerA").append("<div class=disc draggable=true" + "id=" + i + ">");
+  }
+}
+
+//************END Dynamic Disk Creation******************
+//                      *********Rules*************
+//If discContainer's first child element has LOWER 'rank' than 'ui.draggable'
+
+var discID = $(".disc").attr("id")
+
+
+// then revert/cancel the drag/drop.
+
+//**********End addClass code*********************
 });

@@ -49,6 +49,7 @@ p {
 
 .disc {
   height: 10%;
+  width: 95%;
   background-color: orange;
   border: solid #000;
   border-width: 3px;
@@ -62,16 +63,6 @@ p {
   margin: 0 auto;
   cursor: move;
 
-}
-#discOne {
-  width:30%;
-}
-#discTwo {
-  width: 63%;
-}
-
-#discThree {
-  width:97%;
 }
 
 .dropped {
