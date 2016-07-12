@@ -20,23 +20,19 @@ p {
   padding: 5px;
   height: 10px;
   width: 100%;
-  vertical-align: middle;
-  z-index: 1;
 }
 .wrapper{
   display: block;
   text-align: center;
   margin: 0 auto;
-
 }
 
 .discContainer {
-
   display: inline-block;
   min-height: 100px;
   min-width: 25%;
   background-color: #ccc;
-  border: none;
+  border: 5px solid black;
   -webkit-border-radius: 10px;
   -ms-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -45,12 +41,11 @@ p {
   -ms-box-shadow: 3px 2px 2px black;
   box-shadow: 3px 2px 2px black;
   vertical-align: middle;
-  position: relative;
   background-image: url(#);
   background-size:cover;
   background-repeat: no-repeat;
-
 }
+
 .disc {
   height: 10%;
   background-color: orange;
@@ -85,7 +80,7 @@ p {
 
 .dropped {
   height: 10%;
-  background-color: orange;
+  background-color: purple;
   border: solid #000;
   border-width: 3px;
   -webkit-border-radius: inherit;
@@ -97,14 +92,6 @@ p {
   box-shadow: inherit;
   margin: 0 auto;
   cursor: move;
-  position: absolute;
   bottom:0;
 
-}
-.bottom {
-  height: 0px;
-  width: 0px;
-  margin: 0 auto;
-  position: absolute;
-  bottom: 0;
 }
