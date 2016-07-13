@@ -28,29 +28,20 @@ $("document").ready(function(){
       helper: 'clone',
       opacity: 0.35,
       revert: "invalid",
+      create: function( event, ui ) {
+        var parentsFirstChild =      $(this).parent().find(">:first-child").attr('id');
+        var discId = $(this).attr('id');
 
-       start: function( event, ui ) {
-         var parentsFirstChild = $(this).parent().find(">:first-child").attr('id');
-         var discId = $(this).attr('id');
-         console.log(parentsFirstChild)
-         if (discId === parentsFirstChild ) {
-           console.log("you're a genius")
-         }
-
-
-
-        //  if (discId != $(this).parent().find(">:first-child").attr('id')) {
-        //    // Setter
-        //    $(".disc").draggable( "option", "disable", true );
-        //  }
-        //  else {
-        //    $( ".disc" ).draggable( "option", "disable", false )
-        //  }
-       },
+        if (discId != parentsFirstChild ) {
+          $(this).draggable({disabled: true})
+        }
+        }
 
     });
   }
+
 });
+
 
 
 //CONTAINER A
@@ -58,6 +49,7 @@ $("#discContainerA").droppable({
   drop: function(event, ui) {
     ($(this)).prepend($(ui.draggable)),
     $(".disc").css("height", "10")
+      
   },
 
   // over: function(discId) {
