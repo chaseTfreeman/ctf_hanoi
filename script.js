@@ -15,7 +15,7 @@ $("document").ready(function(){
   function createDisc(num) {
     num = parseInt(num);
     for(i = 1; i != num+1; i++){
-      $("#discContainerA").prepend("<div class='disc' draggable='true'" +" " + "id=" + i + ">").css('height', "30")
+      $("#discContainerA").prepend("<div class='disc' draggable='true'" +" " + "id=" + (i) + ">").css('height', "30")
       $('.disc').css('width', function(i) {
         return 100 + (i * 20) ;
       });
@@ -28,29 +28,46 @@ $("document").ready(function(){
       helper: 'clone',
       opacity: 0.35,
       revert: "invalid",
-      create: function( event, ui ) {
-        var parentsFirstChild =      $(this).parent().find(">:first-child").attr('id');
-        var discId = $(this).attr('id');
-
-        if (discId != parentsFirstChild ) {
-          $(this).draggable({disabled: true})
-        }
-        }
+      // create: function( event, ui ) {
+      //   var parentsFirstChild = $(this).parent().find(">:first-child").attr('id');
+      //   var discId = $(this).attr('id');
+      //
+      //   if (discId != parentsFirstChild ) {
+      //     $(this).draggable({disabled: true})
+      //   }
+      // },
 
     });
-  }
 
-});
+
+
+  };
+
+
+
+
+
 
 
 
 //CONTAINER A
 $("#discContainerA").droppable({
-  drop: function(event, ui) {
-    ($(this)).prepend($(ui.draggable)),
+
+  drop: function( event, ui ) {
+    var parentsFirstChild = $(ui.draggable).parent().find(">:first-child").attr('id');
+    var discId = $(ui.draggable).attr('id');
+    console.log(discId)
+    console.log(parentsFirstChild);
+
+
+    if (discId >= parentsFirstChild ) {
+    $("#discContainerA").prepend($(ui.draggable)),
     $(".disc").css("height", "10")
-      
+  }
   },
+
+
+});
 
   // over: function(discId) {
   //   var firstChildId = $(this).children('div').attr("id")
@@ -65,15 +82,26 @@ $("#discContainerA").droppable({
   //   }
   // },
 
-});
 //CONTAINER B
 $("#discContainerB").droppable({
-  drop: function(event, ui) {
-    ($(this)).prepend($(ui.draggable)),
-    $(".disc").css("height", "10"),
-    $(this).droppable( "option", "enabled", true );
-
+  over: function (event, ui) {
+    var targetId = $(this).attr("id")
+    console.log(targetId);
   },
+
+
+  drop: function( event, ui ) {
+    var parentsFirstChild = $(ui.draggable).parent().find(">:first-child").attr('id');
+    var discId = $(ui.draggable).attr('id');
+    console.log(discId)
+    console.log(parentsFirstChild);
+
+    if (discId >= parentsFirstChild ) {
+    $("#discContainerB").prepend($(ui.draggable)),
+    $(".disc").css("height", "10")
+  }
+  },
+});
 
 
   // over: function(discId) {
@@ -91,13 +119,21 @@ $("#discContainerB").droppable({
   //
   //
   // },
-});
 //CONTAINER C
 $("#discContainerC").droppable({
-  drop: function(event, ui) {
-    ($(this)).prepend($(ui.draggable)),
-    $(".disc").css("height", "10");
+  drop: function( event, ui ) {
+    var parentsFirstChild = $(ui.draggable).parent().find(">:first-child").attr('id');
+    var discId = $(ui.draggable).attr('id');
+    console.log(discId)
+    console.log(parentsFirstChild);
+
+    if (discId >= parentsFirstChild ) {
+    $("#discContainerC").prepend($(ui.draggable)),
+    $(".disc").css("height", "10")
+  }
   },
+
+});
   // over: function(discId) {
   //   var firstChildId = $(this).children('div').attr("id")
   //   //this is the rule! need to disable drop on invalid moves
@@ -110,21 +146,5 @@ $("#discContainerC").droppable({
   //     $( "#discContainerC" ).droppable( "option", "enabled", true );
   //   }
   // },
+
 });
-
-
-
-//***********End Drag & Drop Code**************
-
-//***********Start First Child Rule***************************
-//If discContainer's first child element has LOWER 'rank' than 'ui.draggable'
-// then revert/cancel the drag/drop.
-
-//*************End First Chil Rule*******************************
-
-//************END Dynamic Disk Creation******************
-
-//~~~~~~###~~~~~~~~~~ *********Rules************* ~~~~~~~~~~~~###~~~~~~~
-
-
-//**********End addClass code*********************
