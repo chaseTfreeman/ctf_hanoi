@@ -40,3 +40,8 @@
                     -Add background URL to each pegContainer using PS to make pegs and labels
                     -.addClass to center the divs as they move. [ on.drop(addClass)]
       TUESDAY JULY 12:
+            [Done]  - Figure out the proper Append method.
+                [???]   * Fix style issue!
+                    - create value based logic rules/conditions for discs being dropped.
+                        * only the first child of the discContainer can be selected.
+                        * 

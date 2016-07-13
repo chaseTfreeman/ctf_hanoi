@@ -4,9 +4,10 @@
   <title>TOWERS OF HANOI</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="styles.css">
+  <script src="jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 
 </head>
 <body>
@@ -14,28 +15,20 @@
   <header>
     <h1>Towers of Hanoi!</h1>
   </header>
+  <div id="formHolder">
+    <form id=target>
+    <input class="discChoice" type="text"><span>Choose a number of discs</span></input>
+    <input class="submit" type="submit"></input>
+  </form>
+  </div>
   <div class="wrapper">
     <div id="discContainerA" class="discContainer" droppable="true">
-      <div class="disc" id=discOne draggable="true">
-        <p>1</p>
-      </div>
-      <div class="disc" id=discTwo draggable="true">
-        <p>2</p>
-      </div>
-      <div class="disc" id=discThree draggable="true">
-        <p>3</p>
-      </div>
-      <div class="bottom" id="bottom"></div>
     </div>
     <div id="discContainerB" class="discContainer" droppable="true">
-      <div class="bottom" id="bottom"></div>
     </div>
     <div id="discContainerC" class="discContainer" droppable="true">
-      <div class="bottom" id="bottom"></div>
     </div>
   </div>
-
-
 
 
   <script src="script.js"></script>
