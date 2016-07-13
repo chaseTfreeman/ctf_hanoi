@@ -1,27 +1,23 @@
 $("document").ready(function(){
   console.log("Ready!");
-
   //*********** Start Dynamic Disk Creation************
   var numDiscs
   function getDiscNum() {
     numDiscs = $(".discChoice").val()
     return numDiscs
   }
-
   $("#target").submit(function(event){
     event.preventDefault();
     getDiscNum()
     createDisc(getDiscNum())
   });
-
   function createDisc(num) {
     num = parseInt(num);
     for(i = 1; i != num+1; i++){
-      $("#discContainerA").prepend("<div class='disc' draggable='true' ui-draggable" +" " + "id=" + i + ">").css('height', "30")
+      $("#discContainerA").prepend("<div class='disc' draggable='true'" +" " + "id=" + i + ">").css('height', "30")
       $('.disc').css('width', function(i) {
-        return 100 + (i * 7) ;
+        return 100 + (i * 20) ;
       });
-
     }
     //***********Begin Drag & Drop Code:******************
     $(".disc").draggable({
@@ -37,21 +33,23 @@ $("document").ready(function(){
         ($(this)).prepend($(ui.draggable)),
         $(".disc").css("height", "10");
 
-
-        console.log($(this))
+        var discId = $(".discContainer").children("div").attr("id");
+        console.log(discId)
       }
+
     });
     //***********End Drag & Drop Code**************
+
+    //***********Start First Child Rule***************************
+    //If discContainer's first child element has LOWER 'rank' than 'ui.draggable'
+    // then revert/cancel the drag/drop.
+
+  //*************End First Chil Rule*******************************
   }
   //************END Dynamic Disk Creation******************
 
-  //                      *********Rules*************
-  //If discContainer's first child element has LOWER 'rank' than 'ui.draggable'
+  //~~~~~~###~~~~~~~~~~ *********Rules************* ~~~~~~~~~~~~###~~~~~~~
 
-  var discID = $(".disc").attr("id")
-
-
-  // then revert/cancel the drag/drop.
 
   //**********End addClass code*********************
 });
