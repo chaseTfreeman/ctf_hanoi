@@ -27,65 +27,101 @@ $("document").ready(function(){
       stack: ".disc",
       helper: 'clone',
       opacity: 0.35,
-      revert: function(pizza) {
+      revert: "invalid",
 
-          var discId = $(this).attr("id")
+       start: function( event, ui ) {
+         var parentsFirstChild = $(this).parent().find(">:first-child").attr('id');
+         var discId = $(this).attr('id');
+         console.log(parentsFirstChild)
+         if (discId === parentsFirstChild ) {
+           console.log("you're a genius")
+         }
 
-          if ( 0 > discId) {
-            console.log("pizza success")
-          }
-          else {
-            console.log(discId)
-          }
-        },
 
-    });
-    //CONTAINER A
-    $("#discContainerA").droppable({
 
-      drop: function(event, ui) {
-        ($(this)).prepend($(ui.draggable)),
-        $(".disc").css("height", "10")
-      },
-      over: function(firstChildId) {
-          var firstChildId = $(this).children('div').attr("id")
-          console.log(firstChildId)
-        },
+        //  if (discId != $(this).parent().find(">:first-child").attr('id')) {
+        //    // Setter
+        //    $(".disc").draggable( "option", "disable", true );
+        //  }
+        //  else {
+        //    $( ".disc" ).draggable( "option", "disable", false )
+        //  }
+       },
 
     });
-    //CONTAINER B
-    $("#discContainerB").droppable({
-      drop: function(event, ui) {
-        ($(this)).prepend($(ui.draggable)),
-        $(".disc").css("height", "10");
-      },
-      over: function(discId) {
-          var firstChildId = $(this).children('div').attr("id")
-          //this is the rule! need to disable drop on invalid moves
-          if (firstChildId < discId){
-            console.log("invalid move")
-          }
-          else {
-            console.log("valid move");
-          }
-
-
-        },
-    });
-    //CONTAINER C
-    $("#discContainerC").droppable({
-      drop: function(event, ui) {
-        ($(this)).prepend($(ui.draggable)),
-        $(".disc").css("height", "10");
-      },
-      over: function(discId) {
-          var firstChildId = $(this).children('div').attr("id")
-          console.log(firstChildId)
-        },
-    });
-
-  };
+  }
 });
+
+
+//CONTAINER A
+$("#discContainerA").droppable({
+  drop: function(event, ui) {
+    ($(this)).prepend($(ui.draggable)),
+    $(".disc").css("height", "10")
+  },
+
+  // over: function(discId) {
+  //   var firstChildId = $(this).children('div').attr("id")
+  //   //this is the rule! need to disable drop on invalid moves
+  //   if (firstChildId < discId){
+  //     console.log("invalid move")
+  //     var disabled = $( "#discContainerA" ).droppable( "option", "disabled", true );
+  //   }
+  //   else {
+  //     console.log("valid move");
+  //     var disabled = $( "#discContainerA" ).droppable( "option", "enabled", true );
+  //   }
+  // },
+
+});
+//CONTAINER B
+$("#discContainerB").droppable({
+  drop: function(event, ui) {
+    ($(this)).prepend($(ui.draggable)),
+    $(".disc").css("height", "10"),
+    $(this).droppable( "option", "enabled", true );
+
+  },
+
+
+  // over: function(discId) {
+  //   var firstChildId = $(this).children('div').attr("id")
+  //   //this is the rule! need to disable drop on invalid moves
+  //   if (firstChildId < discId){
+  //     console.log("invalid move")
+  //     $( "#discContainerB" ).droppable( "option", "disabled", true );
+  //
+  //   }
+  //   else {
+  //     console.log("valid move");
+  //     $( "#discContainerB" ).droppable( "option", "enabled", true);
+  //   }
+  //
+  //
+  // },
+});
+//CONTAINER C
+$("#discContainerC").droppable({
+  drop: function(event, ui) {
+    ($(this)).prepend($(ui.draggable)),
+    $(".disc").css("height", "10");
+  },
+  // over: function(discId) {
+  //   var firstChildId = $(this).children('div').attr("id")
+  //   //this is the rule! need to disable drop on invalid moves
+  //   if (firstChildId < discId){
+  //     console.log("invalid move")
+  //     $( "#discContainerC" ).droppable( "option", "disabled", true );
+  //   }
+  //   else {
+  //     console.log("valid move");
+  //     $( "#discContainerC" ).droppable( "option", "enabled", true );
+  //   }
+  // },
+});
+
+
+
 //***********End Drag & Drop Code**************
 
 //***********Start First Child Rule***************************
