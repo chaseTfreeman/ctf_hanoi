@@ -52,6 +52,18 @@ $("document").ready(function(){
 
 //CONTAINER A
 $("#discContainerA").droppable({
+  over: function (event, ui) {
+    var targetId = $(this).attr("id")
+    var targetFirstChildId = $(this).find(">:first-child").attr('id')
+    console.log(targetFirstChildId + " here");
+
+    if ($(ui.draggable).attr('id') < targetFirstChildId) {
+      $(this).droppable( "disable");
+      $(this).droppable( "enable");
+      return;
+
+    }
+  },
 
   drop: function( event, ui ) {
     var parentsFirstChild = $(ui.draggable).parent().find(">:first-child").attr('id');
@@ -69,58 +81,52 @@ $("#discContainerA").droppable({
 
 });
 
-  // over: function(discId) {
-  //   var firstChildId = $(this).children('div').attr("id")
-  //   //this is the rule! need to disable drop on invalid moves
-  //   if (firstChildId < discId){
-  //     console.log("invalid move")
-  //     var disabled = $( "#discContainerA" ).droppable( "option", "disabled", true );
-  //   }
-  //   else {
-  //     console.log("valid move");
-  //     var disabled = $( "#discContainerA" ).droppable( "option", "enabled", true );
-  //   }
-  // },
 
 //CONTAINER B
 $("#discContainerB").droppable({
   over: function (event, ui) {
     var targetId = $(this).attr("id")
-    console.log(targetId);
-  },
+    var targetFirstChildId = $(this).find(">:first-child").attr('id')
+    console.log(targetFirstChildId + " here");
 
+    if ($(ui.draggable).attr('id') < targetFirstChildId) {
+      $(this).droppable( "disable");
+      $(this).droppable( "enable");
+      return;
+    }
+  },
 
   drop: function( event, ui ) {
     var parentsFirstChild = $(ui.draggable).parent().find(">:first-child").attr('id');
     var discId = $(ui.draggable).attr('id');
+    //var parentsFirstChildWidth = $(this).attr('width');
     console.log(discId)
     console.log(parentsFirstChild);
 
-    if (discId >= parentsFirstChild ) {
-    $("#discContainerB").prepend($(ui.draggable)),
-    $(".disc").css("height", "10")
+    if (discId < parentsFirstChild) {
+    return;
   }
+    else  {
+      $("#discContainerB").prepend($(ui.draggable)),
+      $(".disc").css("height", "10")
+    }
   },
 });
 
-
-  // over: function(discId) {
-  //   var firstChildId = $(this).children('div').attr("id")
-  //   //this is the rule! need to disable drop on invalid moves
-  //   if (firstChildId < discId){
-  //     console.log("invalid move")
-  //     $( "#discContainerB" ).droppable( "option", "disabled", true );
-  //
-  //   }
-  //   else {
-  //     console.log("valid move");
-  //     $( "#discContainerB" ).droppable( "option", "enabled", true);
-  //   }
-  //
-  //
-  // },
 //CONTAINER C
 $("#discContainerC").droppable({
+  over: function (event, ui) {
+    var targetId = $(this).attr("id")
+    var targetFirstChildId = $(this).find(">:first-child").attr('id')
+    console.log(targetFirstChildId + " here");
+
+    if ($(ui.draggable).attr('id') < targetFirstChildId) {
+      $(this).droppable( "disable");
+      $(this).droppable( "enable");
+      return;
+    }
+  },
+
   drop: function( event, ui ) {
     var parentsFirstChild = $(ui.draggable).parent().find(">:first-child").attr('id');
     var discId = $(ui.draggable).attr('id');
@@ -134,17 +140,6 @@ $("#discContainerC").droppable({
   },
 
 });
-  // over: function(discId) {
-  //   var firstChildId = $(this).children('div').attr("id")
-  //   //this is the rule! need to disable drop on invalid moves
-  //   if (firstChildId < discId){
-  //     console.log("invalid move")
-  //     $( "#discContainerC" ).droppable( "option", "disabled", true );
-  //   }
-  //   else {
-  //     console.log("valid move");
-  //     $( "#discContainerC" ).droppable( "option", "enabled", true );
-  //   }
-  // },
+
 
 });
