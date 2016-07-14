@@ -20,6 +20,8 @@ p {
   padding: 5px;
   height: 10px;
   width: 100%;
+  font-size: 22px;
+  color: white;
 }
 .wrapper{
   display: block;
@@ -100,4 +102,11 @@ p {
 
 span {
   color: white;
+}
+.instructions {
+  min-width: 100px;
+  min-height: 100px;
+  margin: 0 auto;
+  padding-top: 75px;
+  padding-bottom: 30px;
 }
