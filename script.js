@@ -56,7 +56,7 @@ $("#discContainerA").droppable({
     var targetId = $(this).attr("id")
     var targetFirstChildId = $(this).find(">:first-child").attr('id')
     console.log(targetFirstChildId + " here");
-
+//try combing conditions in the if()
     if ($(ui.draggable).attr('id') < targetFirstChildId) {
       $(this).droppable( "disable");
       $(this).droppable( "enable");
