@@ -12,14 +12,18 @@ $("document").ready(function(){
     createDisc(getDiscNum())
   });
 
+// nice job creating all da discs
   function createDisc(num) {
     num = parseInt(num);
+    // i really like this, here you're keeping your code modular such that you have all the information you need to make restrictions for not allowing dropping onto smaller elements, just gotta make it happen now
+    // i would recommend not encapsulating that data in an `id` attribute. Instead maybe consider an attribute called `data-disc-size`
     for(i = 1; i != num+1; i++){
       $("#discContainerA").prepend("<div class='disc' draggable='true'" +" " + "id=" + (i) + ">").css('height', "30")
       $('.disc').css('width', function(i) {
         return 100 + (i * 20) ;
       });
     }
+    // nice job getting drag & drop to work! well sorta. still gotta work on big tiles over little ones! thats not allowed!
     //***********Begin Drag & Drop Code:******************
     $(".disc").draggable({
       snap: ".discContainer",
@@ -28,6 +32,7 @@ $("document").ready(function(){
       helper: 'clone',
       opacity: 0.35,
       revert: "invalid",
+      // generally want to remove any commented out code in production
       // create: function( event, ui ) {
       //   var parentsFirstChild = $(this).parent().find(">:first-child").attr('id');
       //   var discId = $(this).attr('id');
@@ -49,7 +54,7 @@ $("document").ready(function(){
 
 
 
-
+// the next 3 blocks of code seem..... wet. Definitely some opportunities to refactor here.
 //CONTAINER A
 $("#discContainerA").droppable({
   over: function (event, ui) {
@@ -57,6 +62,7 @@ $("#discContainerA").droppable({
     var targetFirstChildId = $(this).find(">:first-child").attr('id')
     console.log(targetFirstChildId + " here");
 //try combing conditions in the if()
+// in this part of the droppable seems like you should only disable rather then disable and enable again.
     if ($(ui.draggable).attr('id') < targetFirstChildId) {
       $(this).droppable( "disable");
       $(this).droppable( "enable");
